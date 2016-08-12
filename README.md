@@ -18,7 +18,7 @@ _This website will ask users to answer a brief series of questions about themsel
       git clone https://github.com/KomodoTech/epicodusTrack.git
       
       Then using the browser of your choice open up the index.html file inside the directory 
-      into which the repository was cloned.
+      into which the repository was cloned._
 
 
 ## Known Bugs
@@ -47,4 +47,4 @@ alexandre.leibler@gmail.com_
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
- 			epicodusTrack Copyright (C) 2016 Alexandre Leibler
+ epicodusTrack Copyright (C) 2016 Alexandre Leibler
