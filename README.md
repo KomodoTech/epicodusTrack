@@ -13,12 +13,12 @@ _This website will ask users to answer a brief series of questions about themsel
 
 * _1. To view website online use the url: https://KomodoTech/github.io/epicodusTrack_
 
-* _2. To view website locally type the following command into the shell of your choice:
+* _2. To view website locally type the following command into the shell of your choice:_
       
-      git clone https://github.com/KomodoTech/epicodusTrack.git
+      _git clone https://github.com/KomodoTech/epicodusTrack.git_
       
-      Then using the browser of your choice open up the index.html file inside the directory 
-      into which the repository was cloned._
+      _Then using the browser of your choice open up the index.html file inside the directory_ 
+      _into which the repository was cloned._
 
 
 ## Known Bugs
