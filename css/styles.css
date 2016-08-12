@@ -4,12 +4,11 @@
   background-position: 0 80%;
   background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 
 #myNavbar {
-  margin: 20px; 
+  margin: 20px;
 }
 
 #myNavbar .navbar-brand {
@@ -17,4 +16,29 @@
   font-style: italic;
   color: #FFE8DD;
   float: left;
+}
+
+#myNavbar .navbar-brand:hover {
+  color: #FFC5A6;
+}
+
+
+
+.page-header {
+  margin-top: 170px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  font-size: 1.5em;
+  color: #FFE8DD;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #FFC5A6;
+}
+
+
+#navMenu {
+  margin-right: 20px;
+  width:
 }
