@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
 
     for (var i = 0; i < 5; i++) {
       for (var j = 0; j < 3; j++) {
-        answerMatrix[i][j] = parseInt(getAnswer(i + 1));
+        answerMatrix[i][j] = parseInt(getAnswer((i + 1),(j + 1) ));
       }
     }
 
@@ -34,9 +34,9 @@ jQuery(document).ready(function(){
 
   });
 
-  var getAnswer = function(qNum) {
+  var getAnswer = function(qNum, aNum) {
     var answer = 0;
-    var questionName="q"+qNum+"Input";
+    var questionName="q"+qNum+"a"+aNum;
     var checked = $("input:radio[name=" + questionName + "]").is(":checked");
     if (checked) {
       answer = 1;
