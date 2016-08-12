@@ -13,55 +13,69 @@ jQuery(document).ready(function(){
 
     // console.log(answer1 + " " + answer2 + " " + answer3 + " " + answer4 + " " + answer5);
 
-    // Create 5x3 Matrix to store answers in
-    var answerMatrix = new Array(5); // Questions
-    for (var index = 0; index < 5; index++){
-      answerMatrix[index] = new Array(3); // Answer Options
-    }
 
 
-    for (var i = 0; i < 5; i++) {
-      for (var j = 0; j < 3; j++) {
-        answerMatrix[i][j] = parseInt(getAnswer((i + 1),(j + 1) ));
-      }
-    }
+    // CHECK IF ALL QUESTIONS WERE ANSWERED
+    var checkedLen = $(".radOpt:checked").length;
+    var allLen = $(".radOpt").length;
+    var numOfQuestions = $(".radio").length;
+    var numOfOptions = $("input:radio").length / numOfQuestions;
+    console.log(checkedLen + " " + allLen);
 
-    // SUM MATRIX OVER COLUMNS
+    if (checkedLen === (allLen / numOfOptions)) {
 
-    var maxSum = 0;
-    var maxColumn = 0;
-
-    for (var j = 0; j < 3; j++) { // Column
-      var currentSum = 0;
-      for (var i = 0; i < 5; i++) { // Row aka Question
-        // console.log(answerMatrix[i][j]);
-        currentSum += answerMatrix[i][j];
+      // Create 5x3 Matrix to store answers in
+      var answerMatrix = new Array(5); // Questions
+      for (var index = 0; index < 5; index++){
+        answerMatrix[index] = new Array(3); // Answer Options
       }
 
-      if (currentSum > maxSum) {
-        maxSum = currentSum;
-        maxColumn = j;
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < 3; j++) {
+            answerMatrix[i][j] = parseInt(getAnswer((i + 1),(j + 1) ));
+        }
       }
-      else if (currentSum == maxSum) {
-        alert("tie");
+
+      // SUM MATRIX OVER COLUMNS
+
+      var maxSum = 0;
+      var maxColumn = 0;
+
+      for (var j = 0; j < 3; j++) { // Column
+        var currentSum = 0;
+        for (var i = 0; i < 5; i++) { // Row aka Question
+          // console.log(answerMatrix[i][j]);
+          currentSum += answerMatrix[i][j];
+        }
+
+        if (currentSum > maxSum) {
+          maxSum = currentSum;
+          maxColumn = j;
+        }
+        else if (currentSum == maxSum) {
+          // alert("tie");
+        }
       }
-    }
 
-    if (maxSum > 0) {
-      trackNum = maxColumn + 1;
-
+      var trackNum = maxColumn + 1;
       console.log("the option with the most checks is option" + trackNum);
       console.log("option"+ trackNum + " has " + maxSum + " checks");
 
-
       showTrack(trackNum);
     }
-    else {
+
+   else {
       alert("Please take this survey seriously");
     }
 
-
   });
+
+
+
+
+
+
+
 
   var getAnswer = function(qNum, aNum) {
     var answer = 0;
@@ -70,6 +84,7 @@ jQuery(document).ready(function(){
     if (checked) {
       answer = 1;
     }
+
     return answer;
   }
 
