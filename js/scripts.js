@@ -47,9 +47,18 @@ jQuery(document).ready(function(){
       }
     }
 
-    console.log("the option with the most checks is option" + (maxColumn + 1));
-    console.log("option"+ (maxColumn + 1) + " has " + maxSum + " checks");
+    if (maxSum > 0) {
+      trackNum = maxColumn + 1;
 
+      console.log("the option with the most checks is option" + trackNum);
+      console.log("option"+ trackNum + " has " + maxSum + " checks");
+
+
+      showTrack(trackNum);
+    }
+    else {
+      alert("Please take this survey seriously");
+    }
 
 
   });
@@ -62,5 +71,10 @@ jQuery(document).ready(function(){
       answer = 1;
     }
     return answer;
-  };
+  }
+
+
+  var showTrack =  function(winningTrack) {
+    $("#trackRecommendation").text("You should try track " + winningTrack);
+  }
 });
