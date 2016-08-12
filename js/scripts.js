@@ -26,11 +26,31 @@ jQuery(document).ready(function(){
       }
     }
 
-    for (var i = 0; i < 5; i++) {
-      for (var j = 0; j < 3; j++) {
-        console.log(answerMatrix[i][j]);
+    // SUM MATRIX OVER COLUMNS
+
+    var maxSum = 0;
+    var maxColumn = 0;
+
+    for (var j = 0; j < 3; j++) { // Column
+      var currentSum = 0;
+      for (var i = 0; i < 5; i++) { // Row aka Question
+        // console.log(answerMatrix[i][j]);
+        currentSum += answerMatrix[i][j];
+      }
+
+      if (currentSum > maxSum) {
+        maxSum = currentSum;
+        maxColumn = j;
+      }
+      else if (currentSum == maxSum) {
+        alert("tie");
       }
     }
+
+    console.log("the option with the most checks is option" + (maxColumn + 1));
+    console.log("option"+ (maxColumn + 1) + " has " + maxSum + " checks");
+
+
 
   });
 
