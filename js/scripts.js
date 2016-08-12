@@ -86,8 +86,39 @@ jQuery(document).ready(function(){
     return answer;
   }
 
+  // Option 1: PHP/Drupal
+  // Option 2: Java/Android
+  // Option 3: C#/.Net
+  var showTrack = function(winningTrack) {
 
-  var showTrack =  function(winningTrack) {
-    $("#trackRecommendation").text("You should try track " + winningTrack);
+    console.log(winningTrack);
+
+    switch (true) {
+      case (winningTrack === 1):
+        // $("#trackRecommendation").hide();
+        // $("#php").show();
+        // $("#drupal").show();
+        $("#pD").show();
+        break;
+
+      case (winningTrack === 2):
+        // $("#trackRecommendation").hide();
+        // $("#java").show();
+        // $("#android").show();
+        $("#jA").show();
+        break;
+
+      case (winningTrack === 3):
+        // $("#trackRecommendation").hide();
+        // $("#csharp").show();
+        // $("#net").show();
+        $("#cN").show();
+        break;
+
+      default:
+        alert("track number invalid!");
+    }
   }
+
+
 });

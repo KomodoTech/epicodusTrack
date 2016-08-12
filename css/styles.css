@@ -52,3 +52,11 @@
 .recommend p {
   font-size: 100px;
 }
+
+#trackRecommendation {
+  margin-top: 50px;
+}
+
+#pD, #jA, #cN {
+  display: none;
+}
