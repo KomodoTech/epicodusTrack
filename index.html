@@ -11,10 +11,34 @@
   </head>
 
   <body>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div id="myNavbar">
+            <a class="navbar-brand" href="#">Stacks</a>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" aria-expanded="false">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-book"></span> Learn More</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="container">
-
-      <h1>WELCOME TO OUR SURVEY</h1>
-
+      <div class="page-header">
+        <h1>Epicodus Track Survey</h1>
+      </div>
       <div class="row">
         <div class="col-sm-4 col-sm-push-1">
             <form id="surveyQuestion">
@@ -86,7 +110,7 @@
                 </label>
               </div>
 
-              <h2 class="question">FifthQuestion</h2>
+              <h2 class="question">Fifth Question</h2>
               <div class="radio">
                 <label>
                   <input type="radio" class="radOpt" name="q5a1" value="q5_option1">
@@ -112,6 +136,15 @@
         <div class="col-sm-4 col-sm-push-2">
           <h2>YOUR RECOMMENDATION:</h2>
           <div id="trackRecommendation">
+            <div class="recommend">
+              <img src="img/php.png" id="php">
+                <p><a href="#">PHP</a></p>
+
+            </div>
+            <div class="recommend">
+            </div>
+            <div class="recommend">
+            </div>
           </div>
         </div>
       </div>

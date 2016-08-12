@@ -1,0 +1,20 @@
+.navbar-default {
+  height: 150px;
+  background-image: url("../img/web.jpg");
+  background-position: 0 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
+#myNavbar {
+  margin: 20px; 
+}
+
+#myNavbar .navbar-brand {
+  font-size: 5em;
+  font-style: italic;
+  color: #FFE8DD;
+  float: left;
+}

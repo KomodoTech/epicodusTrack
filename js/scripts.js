@@ -75,8 +75,6 @@ jQuery(document).ready(function(){
 
 
 
-
-
   var getAnswer = function(qNum, aNum) {
     var answer = 0;
     var questionName="q"+qNum+"a"+aNum;
