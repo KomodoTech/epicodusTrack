@@ -32,7 +32,7 @@ jQuery(document).ready(function(){
 
       for (var i = 0; i < 5; i++) {
         for (var j = 0; j < 3; j++) {
-            answerMatrix[i][j] = parseInt(getAnswer((i + 1),(j + 1) ));
+            answerMatrix[i][j] = parseInt(getAnswer((i + 1),(j + 1)));
         }
       }
 
@@ -74,13 +74,22 @@ jQuery(document).ready(function(){
 
 
 
+  // NOTE: In order for radio buttons to work as expected (one selection allowed
+  // at a time), each button in a given group has to have the same name.
 
   var getAnswer = function(qNum, aNum) {
     var answer = 0;
-    var questionName="q"+qNum+"a"+aNum;
+
+    var questionName= "q" + qNum;
+    var questionValue = "q" + qNum + "_option" + aNum;
+
     var checked = $("input:radio[name=" + questionName + "]").is(":checked");
+    var correctVal = ($("input:radio[name=" + questionName + "]:checked").val() === questionValue);
+
     if (checked) {
-      answer = 1;
+      if (correctVal) {
+        answer = 1;
+      }
     }
 
     return answer;
@@ -95,23 +104,17 @@ jQuery(document).ready(function(){
 
     switch (true) {
       case (winningTrack === 1):
-        // $("#trackRecommendation").hide();
-        // $("#php").show();
-        // $("#drupal").show();
+        $("#trackRecommendation div.row").hide();
         $("#pD").show();
         break;
 
       case (winningTrack === 2):
-        // $("#trackRecommendation").hide();
-        // $("#java").show();
-        // $("#android").show();
+        $("#trackRecommendation div.row").hide();
         $("#jA").show();
         break;
 
       case (winningTrack === 3):
-        // $("#trackRecommendation").hide();
-        // $("#csharp").show();
-        // $("#net").show();
+        $("#trackRecommendation div.row").hide();
         $("#cN").show();
         break;
 
