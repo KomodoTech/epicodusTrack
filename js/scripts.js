@@ -25,13 +25,13 @@ jQuery(document).ready(function(){
     if (checkedLen === (allLen / numOfOptions)) {
 
       // Create 5x3 Matrix to store answers in
-      var answerMatrix = new Array(5); // Questions
-      for (var index = 0; index < 5; index++){
-        answerMatrix[index] = new Array(3); // Answer Options
+      var answerMatrix = new Array(numOfQuestions); // Questions
+      for (var index = 0; index < numOfQuestions; index++){
+        answerMatrix[index] = new Array(numOfOptions); // Answer Options
       }
 
-      for (var i = 0; i < 5; i++) {
-        for (var j = 0; j < 3; j++) {
+      for (var i = 0; i < numOfQuestions; i++) {
+        for (var j = 0; j < numOfOptions; j++) {
             answerMatrix[i][j] = parseInt(getAnswer((i + 1),(j + 1)));
         }
       }
@@ -41,9 +41,9 @@ jQuery(document).ready(function(){
       var maxSum = 0;
       var maxColumn = 0;
 
-      for (var j = 0; j < 3; j++) { // Column
+      for (var j = 0; j < numOfOptions; j++) { // Column
         var currentSum = 0;
-        for (var i = 0; i < 5; i++) { // Row aka Question
+        for (var i = 0; i < numOfQuestions; i++) { // Row aka Question
           // console.log(answerMatrix[i][j]);
           currentSum += answerMatrix[i][j];
         }
